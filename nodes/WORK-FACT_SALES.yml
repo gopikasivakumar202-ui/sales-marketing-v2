@@ -1,0 +1,178 @@
+fileVersion: 1
+id: 83cae628-6a07-40b8-80c4-95edac65d137
+name: FACT_SALES
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Orders data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7feca59c-cf68-44aa-84d6-4d99093d60da
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: O_CUSTKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b29d86a-7c38-4706-896e-5d9e92c175a5
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83be33ed-f69b-46d5-9534-52addfab07d3
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: VARCHAR(1)
+        description: ""
+        name: O_ORDERSTATUS
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c431138-1d68-4d82-89db-4e6313fdf48a
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 051fbe54-affe-4e8a-afec-3254c2b6cb0b
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: O_TOTALPRICE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dedc32a2-44f9-47eb-9792-ea858618ba23
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: SUM(O_TOTALPRICE)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a9624ba-1f6a-4039-bd59-e7c5c027991f
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: DATE
+        description: ""
+        name: O_ORDERDATE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36e5ee69-a1d8-40aa-91a5-65f40764be34
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70f817fd-acd9-4287-b2f2-3a6cf5112b23
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: VARCHAR(40)
+        description: ""
+        name: C_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a5828f55-4218-4cac-b4a3-84e2eb09bd4f
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fe8eafd-f0d9-4745-8493-5ef78bcd48c0
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: C_NATIONKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 188946ae-952b-4788-976d-27608572c7ad
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77f2fa7f-39e1-4d90-bee0-80bcc433cdcb
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: C_ACCTBAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f457c918-3156-4934-829f-e05e57f581e2
+                stepCounter: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5408c18f-903c-4939-84db-93eb51442473
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9324d8d2-561f-4224-91e8-227ee5dcf826
+          stepCounter: 83cae628-6a07-40b8-80c4-95edac65d137
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          INT_ORDERS_CUSTOMER: 3bcd616a-e0f0-4e0c-91ee-060121a903dc
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: INT_ORDERS_CUSTOMER
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'INT_ORDERS_CUSTOMER') }} "INT_ORDERS_CUSTOMER"
+            GROUP BY
+                "INT_ORDERS_CUSTOMER"."O_CUSTKEY",
+                "INT_ORDERS_CUSTOMER"."C_NAME",
+                "INT_ORDERS_CUSTOMER"."O_ORDERDATE",
+                "INT_ORDERS_CUSTOMER"."O_ORDERSTATUS",
+                "INT_ORDERS_CUSTOMER"."C_NATIONKEY",
+                "INT_ORDERS_CUSTOMER"."C_ACCTBAL"
+        name: FACT_SALES
+        noLinkRefs: []
+  name: FACT_SALES
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
