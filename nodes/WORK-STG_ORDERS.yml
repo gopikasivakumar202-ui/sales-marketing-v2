@@ -19,20 +19,6 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ba578618-e0fe-41c9-b7ad-67211d830a81
-          stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
-        config: {}
-        dataType: NUMBER(38,0)
-        description: ""
-        name: O_ORDERKEY
-        nullable: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 6b8967d0-9d7b-4c88-b69a-33f6adce8c27
-                stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: 10790690-6770-4e98-97f5-e7c22b7c8a82
           stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
         config: {}
@@ -43,6 +29,20 @@ operation:
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 3dad1193-8126-42cd-85ff-41267d645ad7
+                stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51e0dc77-acb8-41df-99d8-cd113af044df
+          stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
+        config: {}
+        dataType: VARCHAR(15)
+        description: ""
+        name: O_ORDERPRIORITY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 41a23da1-e764-4bd4-9b4c-cd3d4695b463
                 stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
             transform: ""
       - appliedColumnTests: {}
@@ -89,20 +89,6 @@ operation:
             transform: TO_DATE(O_ORDERDATE)
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 51e0dc77-acb8-41df-99d8-cd113af044df
-          stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
-        config: {}
-        dataType: VARCHAR(15)
-        description: ""
-        name: O_ORDERPRIORITY
-        nullable: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 41a23da1-e764-4bd4-9b4c-cd3d4695b463
-                stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: 9c86f3e5-6480-47c9-93e1-aba34c199d6e
           stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
         config: {}
@@ -143,6 +129,26 @@ operation:
               - columnCounter: 65ac6535-c22c-4224-8f5f-09e478a13e71
                 stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9cbbef7-a01e-4951-a182-c7511b51fe28
+          stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: O_ORDERKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b8967d0-9d7b-4c88-b69a-33f6adce8c27
+                stepCounter: a7bf0ab8-5e8c-49e5-aae4-7b65ed581c45
+            transform: ""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

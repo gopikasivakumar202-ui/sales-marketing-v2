@@ -28,7 +28,7 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ba578618-e0fe-41c9-b7ad-67211d830a81
+              - columnCounter: c9cbbef7-a01e-4951-a182-c7511b51fe28
                 stepCounter: 4316b165-9807-46d0-8a82-a325769f8859
             transform: ""
       - appliedColumnTests: {}

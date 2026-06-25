@@ -1,0 +1,230 @@
+fileVersion: 1
+id: ee06b305-7819-49c9-b708-54e8586d291d
+name: FACT_SALES_EXTENED
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Lineitem data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0571d82-5043-4674-9ad1-db2e6c507903
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: DATE
+        description: ""
+        name: O_ORDERDATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50da02aa-a668-4ea4-9dfb-2b8ddd666979
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59e0da55-8ef0-4744-b7ed-6087f2901419
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: L_TAX
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf4c346d-cc11-4d03-82d4-8345e12c3d6b
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b1f879a-b60b-4bed-bf51-efba4bd9b52d
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: L_DISCOUNT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fcefcd8-219a-4f33-8349-553aed28c6ef
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 738ee215-110b-41e9-ba3c-d215df8b988c
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: O_CUSTKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d5c2128-2ccc-47e6-9361-3e88b1610588
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed9a00e0-e0d5-4d5d-a5c7-119014c9b414
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: VARCHAR(1)
+        description: ""
+        name: O_ORDERSTATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 853186ba-ad7a-451d-adcc-d3c60402a7b8
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f010cc3-2587-4ac7-94b6-b644310712a8
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96ba369f-52e9-4f44-b751-96f4988c36c5
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd5d033e-ec74-48fd-aedf-f0acc219de75
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TOTAL_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: SUM(L_EXTENDEDPRICE)
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5301e1bc-153b-47ad-b480-92c96c6abfcf
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NET_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: SUM(L_EXTENDEDPRICE) * (1- L_DISCOUNT)
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e356261-76f7-45b5-82ae-d5e5b519d079
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TAX_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: SUM(L_EXTENDEDPRICE * L_TAX)
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ca0082f-584b-4219-a16e-22c4cfdd0d00
+          stepCounter: ee06b305-7819-49c9-b708-54e8586d291d
+        config: {}
+        dataType: NUMBER(12,2)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: L_QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38325656-d805-4008-ab23-dca541721f13
+                stepCounter: 77ca7293-183e-48e3-9393-86eba6fcbd83
+            transform: ""
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          INT_ORDERS_LINEITEM: 77ca7293-183e-48e3-9393-86eba6fcbd83
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: INT_ORDERS_LINEITEM
+        join:
+          joinCondition: |
+            FROM {{ ref('WORK', 'INT_ORDERS_LINEITEM') }} "INT_ORDERS_LINEITEM"
+            GROUP BY 
+            "INT_ORDERS_LINEITEM"."O_CUSTKEY",
+            "INT_ORDERS_LINEITEM"."O_ORDERDATE",
+            "INT_ORDERS_LINEITEM"."O_ORDERSTATUS",
+            "INT_ORDERS_LINEITEM"."L_DISCOUNT",
+            "INT_ORDERS_LINEITEM"."L_TAX",
+            "INT_ORDERS_LINEITEM"."L_QUANTITY"
+        name: FACT_SALES_EXTENED
+        noLinkRefs: []
+  name: FACT_SALES_EXTENED
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
